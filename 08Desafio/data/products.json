@@ -1,20 +1,32 @@
 [
-    {
-      "title": "Escuadra",
-      "price": 123.45,
-      "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",
-      "id": 1
-    },
-    {
-      "title": "Calculadora",
-      "price": 234.56,
-      "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-256.png",
-      "id": 2
-    },
-    {
-      "title": "Globo Terráqueo",
-      "price": 345.67,
-      "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-256.png",
-      "id": 3
-    }
-   ]
+  {
+    "title": "Escuadra",
+    "price": 123.45,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",
+    "id": 1
+  },
+  {
+    "title": "Calculadora",
+    "price": 234.56,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-256.png",
+    "id": 2
+  },
+  {
+    "title": "Globo Terráqueo",
+    "price": 345.67,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-256.png",
+    "id": 3
+  },
+  {
+    "title": "adictos",
+    "price": 2000,
+    "thumbnail": "6c09f8b1c119d94736ea6a4c093b115f",
+    "id": 4
+  },
+  {
+    "title": "adictos a la bici",
+    "price": 2500,
+    "thumbnail": "d00ce2b25ce4655c5af0688231383fb0",
+    "id": 5
+  }
+]
