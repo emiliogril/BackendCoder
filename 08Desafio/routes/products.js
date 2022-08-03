@@ -77,5 +77,12 @@ router.put('/productos/:id', (req, res) => {
         })
 })
 
+router.get('/reset', (req, res) => {
+     res.json({ message: 'falta implementar' })
+ })
+
+ router.delete('/productos/:id', (req, res) => {
+    res.json({ message: 'falta implementar' })
+ })
 
 module.exports = router
