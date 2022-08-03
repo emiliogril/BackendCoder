@@ -1,0 +1,23 @@
+{
+  "name": "08desafio",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "fixed": "^0.3.1",
+    "it": "^1.1.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4",
+    "nodemon": "^2.0.19"
+  },
+  "nodemonConfig": {
+  "ignore": ["./data/products.json"]
+}
+}
