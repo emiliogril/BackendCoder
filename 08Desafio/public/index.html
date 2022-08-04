@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./estilos.css">
     <link rel="icon" href="./favicon.ico">
-    <title>Document</title>
+    <title>Subir Archivos</title>
 </head>
 
 <body>
@@ -17,20 +17,20 @@
         </div>
         <div class="hijo">
             <form action="/api/productos" enctype="multipart/form-data" method="post">
-                <div> Titulo <input type="text" name="title" value="Producto test" required> </div>
+                <div> Titulo <input type="text" name="title" value="Agregar el producto" required> </div>
                 <div> Precio <input type="number" min="0.00" step="0.01" name="price" value="00.00" required> </div>
                 <br>
                 <div> Imagen <input name="imageFile" type="file" accept="image/*" required> </div>
                 <br>
-                <input type="submit" value="Agregar!" class="btn btn-default">   
+                <input type="submit" value="Subir el archivo!" class="btn btn-default">   
             </form>
             <br>
         </div>
     </div>    
     
-    <div class="padre">
-        <button onclick="document.location='/api/productos'">Ver todos</button>
-        <button onclick="document.location='/api/reset'">Eliminar todos</button>
+    <div class="botonInferior">
+        <button onclick="document.location='/api/productos'">Ver el listado</button>
+        <button onclick="document.location='/api/reset'">Borrar todos</button>
     </div>
 </body>
 

@@ -5,19 +5,19 @@ const router = Router()
 const multer = require('multer')
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './public/images/')
+        cb(null, './public/uploads/')
     }
 })
 const upload = multer({ storage: storage })
 
-//product class
+//Agregar el archivo json
 const Products = require('../bin/products.js')
 const _filePath = './data/products.json'
 const _fileFormat = 'utf-8'
 const products = new Products(_filePath, _fileFormat)
 
 
-//routes
+//las rutas de routes
 router.get('/productos', (req, res) => {
     products.getAll()
         .then(response => {
@@ -77,12 +77,12 @@ router.put('/productos/:id', (req, res) => {
         })
 })
 
-// router.get('/reset', (req, res) => {
-//      res.json({ message: 'falta implementar' })
-//  })
+router.get('/reset', (req, res) => {
+     res.json({ message: 'me falta hacer el boton eliminar' })
+ })
 
-//  router.delete('/productos/:id', (req, res) => {
-//     res.json({ message: 'falta implementar' })
-//  })
+ router.delete('/productos/:id', (req, res) => {
+    res.json({ message: 'me falta hacer el boton eliminar' })
+ })
 
 module.exports = router

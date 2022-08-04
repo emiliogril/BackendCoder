@@ -24,13 +24,15 @@ body {
   }
   
   .titulo {
-    background-color: #74c3f0;
-    border: 1px solid #ccc;
+    background-color: #880000;
     text-align: center;
-    font-style: italic;
+    font-size: 24px;
+    color: #ffffff;
+    min-width: 340px;
+    max-width: 820px;
   }
   
-  .padre {
+  .botonInferior {
     background-color: #fafafa;
     border: 1px solid #ccc;
     text-align: center;
@@ -43,5 +45,7 @@ body {
     background-color: #bbbbbb;
     border: 1px solid #ccc;
     text-align: left;
-    width: auto;
+    min-width: 340px;
+    max-width: 820px;
+
   }

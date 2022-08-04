@@ -28,7 +28,7 @@ class Products {
 
     async #deleteFile(file) {
         try {
-            const path = resolve('./public/images/' + file)
+            const path = resolve('./public/uploads/' + file)
             await fs.unlinkSync(path)
             return { message: `exito al eliminar el archivo ${path}` }
         } catch (error) {
@@ -54,12 +54,7 @@ class Products {
     }
 
     #validateProduct(product) {
-        //valida que el producto a agregar tenga los campos correctos.
         let { title, price, thumbnail } = product
-
-        // console.log(`title = ${title} ${typeof title}`)
-        // console.log(`price = ${price} ${typeof price}`)
-        // console.log(`thumbnail = ${thumbnail} ${typeof thumbnail}`)
 
         if (typeof product === 'undefined') { return false }
         if (typeof title === 'undefined') { return false }
