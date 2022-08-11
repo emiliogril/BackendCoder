@@ -57,10 +57,6 @@ class Products {
         //valida que el producto a agregar tenga los campos correctos.
         let { title, price, thumbnail } = product
 
-        // console.log(`title = ${title} ${typeof title}`)
-        // console.log(`price = ${price} ${typeof price}`)
-        // console.log(`thumbnail = ${thumbnail} ${typeof thumbnail}`)
-
         if (typeof product === 'undefined') { return false }
         if (typeof title === 'undefined') { return false }
         if (typeof price === 'undefined') { return false }

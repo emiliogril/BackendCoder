@@ -27,5 +27,5 @@ const rProducts = require('./routes/products.js')
 app.use('/', rProducts)
 
 //server
-const _port = 3000
+const _port = 8080
 app.listen(_port)

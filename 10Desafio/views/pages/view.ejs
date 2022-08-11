@@ -6,8 +6,8 @@
     <body>
 
         <%- include('../partials/nav') %>
-        
-            <div class="container-sm" style="max-width:540px">
+        <h3 class="TituloPrincipal">Listados de los Productos</h3> 
+            <div class="container-sm" style="max-width:650px">
                 <div class="row">
                     <% for(var i=0; i<products.length; i++) { %>
                         <div class="col mt-3 mb-3">
@@ -32,5 +32,6 @@
     </body>
 
     <%- include('../partials/scripts') %>
+    <%- include('../partials/footer') %>
 
 </html>

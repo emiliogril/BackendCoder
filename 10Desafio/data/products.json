@@ -12,21 +12,9 @@
     "id": 2
   },
   {
-    "title": "Globo Terráqueo",
-    "price": 345.67,
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-256.png",
-    "id": 3
-  },
-  {
-    "title": "Agregar el producto1",
-    "price": 2000,
-    "thumbnail": "342bad4a3c0c77a434b109fd6dab5a59",
-    "id": 8
-  },
-  {
-    "title": "Adictos a la bici",
-    "price": 2033,
-    "thumbnail": "adictos.jpg",
-    "id": 9
+    "title": "Producto",
+    "price": 1,
+    "thumbnail": "https://cdn2.iconfinder.com/data/icons/flat-seo-web-ikooni/128/flat_seo3-15-128.png",
+    "id": 15
   }
 ]

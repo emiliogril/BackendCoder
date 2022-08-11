@@ -50,36 +50,4 @@ router.post('/productos', (req, res) => {
         })
 })
 
-// router.put('/productos/:id', (req, res) => {
-//     let { title, price, thumbnail } = req.body
-//     let id = req.params.id
-//     let updateProduct = { title, price, thumbnail, id }
-
-//     products.update(updateProduct)
-//         .then(response => {
-//             if (typeof response.status === 'undefined') {
-//                 res.status(200).json(response)
-//             } else {
-//                 res.status(response.status).json(response.message)
-//             }
-//         })
-//         .catch(error => {
-//             res.status(500).json(error.message)
-//         })
-// })
-
-// router.get('/productos/:id', (req, res) => {
-//     products.getById(req.params.id)
-//         .then(response => {
-//             if (typeof response.status === 'undefined') {
-//                 res.status(200).json(response)
-//             } else {
-//                 res.status(response.status).json(response.message)
-//             }
-//         })
-//         .catch(error => {
-//             res.status(500).json(error.message)
-//         })
-// })
-
 module.exports = router
