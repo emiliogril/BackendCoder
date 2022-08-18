@@ -1,0 +1,110 @@
+  /* FUENTES */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,900;1,100;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+.TituloPrincipal {
+  font-family: Roboto, sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  color: #191919;
+  letter-spacing: 2px;
+  text-align: center; }
+
+  
+  .counter-box {
+    display: block;
+    background: #f6f6f6;
+    padding: 40px 40px 37px;
+    margin-bottom: 100px;
+    text-align: center;
+  }
+  
+  .counter-box p {
+    margin: 5px 0 0;
+    padding: 0;
+    color: #909090;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .counter-box i {
+    font-size: 60px;
+    margin: 0 0 15px;
+    color: #d2d2d2;
+  }
+  
+  .counter {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: #666;
+    line-height: 28px;
+  }
+  
+  .counter-box.colored {
+    background: #3acf87;
+  }
+  
+  .counter-box.colored p,
+  .counter-box.colored i,
+  .counter-box.colored .counter {
+    color: #fff;
+  }
+
+  .copy {
+    color: white;
+    font-weight: lighter;
+    text-align: center;
+    margin-top: 20px; }
+  
+  footer {
+    background-color: #333333;
+    padding: 40px;
+    margin-top: 20px;
+    text-align: center;
+    color: #fff; }
+    footer h5 {
+      margin: 20px 0;
+      font-size: 1.2rem;
+      font-weight: 300; }
+    footer nav a {
+      text-decoration: none;
+      color: white;
+      padding: 20px; }
+    footer nav a:hover {
+      color: #fff; }
+    footer nav svg {
+      width: 30px;
+      transition: all ease 28ms; }
+    footer nav svg:hover {
+      transform: scale(1.2, 1.2); }
+  
+  @media only screen and (min-width: 200px) and (max-width: 900px) {
+    footer h5 {
+      font-size: 1rem; }
+    footer nav svg {
+      width: 20px; } }
+
+      .sp_email {
+        text-align: left;
+        font-family: Arial;
+        font-size: 14px;
+        color: #1278bf;
+        text-shadow: 0px 0px 2px #217ab9;
+      }
+
+      .sp_timestamp {
+        text-align: left;
+        font-family: Arial;
+        font-size: 14px;
+        color: #dd4e49;
+        text-shadow: 0px 0px 2px #da605c;
+      }
+
+      .sp_message {
+        text-align: left;
+        font-family: Arial;
+        font-size: 14px;
+        color: #389c19;
+        text-shadow: 0px 0px 2px #469e2b;
+      }
