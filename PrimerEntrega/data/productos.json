@@ -1,0 +1,52 @@
+[
+    {
+      "id": 1,
+      "timestamp": 1661180234381,
+      "name": "Escuadra",
+      "description": "",
+      "code": 10105,
+      "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",
+      "price": 123.45,
+      "stock": 18
+    },
+    {
+      "id": 2,
+      "timestamp": 1661180234381,
+      "name": "Calculadora",
+      "description": "",
+      "code": 10106,
+      "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-256.png",
+      "price": 200.1,
+      "stock": 20
+    },
+    {
+      "id": 3,
+      "timestamp": 1661180234381,
+      "name": "Globo Terráqueo",
+      "description": "",
+      "code": 10107,
+      "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-256.png",
+      "price": 180.5,
+      "stock": 50
+    },
+    {
+      "id": 4,
+      "timestamp": 1661180234381,
+      "name": "Regla",
+      "description": "",
+      "code": 10108,
+      "thumbnail": "https://cdn0.iconfinder.com/data/icons/graphic-design-tools-1/32/Ruler-Measurement-Scale-Measure-256.png",
+      "price": 170,
+      "stock": 10
+    },
+    {
+      "id": 5,
+      "timestamp": 1661180234381,
+      "name": "Goma",
+      "description": "",
+      "code": 10109,
+      "thumbnail": "https://cdn1.iconfinder.com/data/icons/office-icons-17/512/ilustracoes_04-08-256.png",
+      "price": 2000,
+      "stock": 15
+    }
+  ]
