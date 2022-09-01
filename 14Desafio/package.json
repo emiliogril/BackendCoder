@@ -1,0 +1,33 @@
+{
+  "name": "14desafio",
+  "version": "1.0.0",
+  "description": "Nuestra Primera Base de Datos",
+  "main": "server.js",
+  "author": "Emilio Gril <emiliogril@gmail.com> (https://github.com/emiliogril)",
+  "license": "ISC",
+  "scripts": {
+    "prod": "node .",
+    "dev": "nodemon .",
+    "DB_ini": "node bin/mariaDB_ini.js",
+    "test": "nodemon test/test.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "knex": "^2.3.0",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "socket.io": "^4.5.1",
+    "sweetalert": "^2.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "./data/products.json",
+      "./data/messages.json"
+    ]
+  }
+}
