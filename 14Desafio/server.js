@@ -1,3 +1,7 @@
+// NOTAS:
+// los datos de conexion se encuentran en el archivo .env
+// para inicializar la base de datos MariaDB ejecutar 'npm run DB_ini'
+
 const express = require('express')
 const morgan = require('morgan')
 const dotenv = require('dotenv').config()
