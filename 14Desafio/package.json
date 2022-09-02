@@ -19,15 +19,13 @@
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "socket.io": "^4.5.1",
+    "sqlite3": "^5.0.11",
     "sweetalert": "^2.1.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
   },
   "nodemonConfig": {
-    "ignore": [
-      "./data/products.json",
-      "./data/messages.json"
-    ]
+    "ignore": []
   }
 }
