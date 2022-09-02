@@ -1,0 +1,73 @@
+[{
+  "_id": {
+    "$oid": "63115d6cd43f347ad63b4dbd"
+  },
+  "title": "Producto03",
+  "price": 1000,
+  "thumbnail": "https://cdn4.iconfinder.com/data/icons/for-your-interface-free-samples/128/Label-256.png",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "63115d81d43f347ad63b4dbe"
+  },
+  "title": "Producto04",
+  "price": 1500,
+  "thumbnail": "https://cdn4.iconfinder.com/data/icons/for-your-interface-free-samples/128/Label-256.png",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "631161bd58044a45f8e7e86d"
+  },
+  "title": "Producto05",
+  "price": 2000,
+  "thumbnail": "https://cdn4.iconfinder.com/data/icons/for-your-interface-free-samples/128/Label-256.png",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "631161c458044a45f8e7e86e"
+  },
+  "title": "Producto06",
+  "price": 2500,
+  "thumbnail": "https://cdn4.iconfinder.com/data/icons/for-your-interface-free-samples/128/Label-256.png",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "631161d158044a45f8e7e86f"
+  },
+  "title": "Producto07",
+  "price": 3000,
+  "thumbnail": "https://cdn4.iconfinder.com/data/icons/for-your-interface-free-samples/128/Label-256.png",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "631161dd58044a45f8e7e870"
+  },
+  "title": "Producto08",
+  "price": 3500,
+  "thumbnail": "https://cdn4.iconfinder.com/data/icons/for-your-interface-free-samples/128/Label-256.png",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "631161e658044a45f8e7e871"
+  },
+  "title": "Producto09",
+  "price": 4000,
+  "thumbnail": "https://cdn4.iconfinder.com/data/icons/for-your-interface-free-samples/128/Label-256.png",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "631161f058044a45f8e7e872"
+  },
+  "title": "Producto10",
+  "price": 4500,
+  "thumbnail": "https://cdn4.iconfinder.com/data/icons/for-your-interface-free-samples/128/Label-256.png",
+  "stock": 0
+},{
+  "_id": {
+    "$oid": "6311628158044a45f8e7e87d"
+  },
+  "title": "Nuevo Producto",
+  "price": 5000,
+  "thumbnail": "https://cdn4.iconfinder.com/data/icons/for-your-interface-free-samples/128/Label-256.png",
+  "stock": 0
+}]
