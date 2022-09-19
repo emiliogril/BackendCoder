@@ -5,7 +5,7 @@ const ContenedorFirebase = require("../../clases/firebaseClass.js");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://coderback-74f26.firebase.io",
+  databaseURL: "https://backendcoder-902df-default-rtdb.firebaseio.com/",
 }, 'productos');
 
 const db = admin.firestore();
