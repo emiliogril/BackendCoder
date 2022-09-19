@@ -1,11 +1,10 @@
 const admin = require("firebase-admin");
-const serviceAccount = require("../../db/coderback-74f26.json");
+const serviceAccount = require("../../db/backendcoder-902df-firebase-adminsdk-89mkw-463720c8ed.json");
 
 const ContenedorFirebase = require("../../clases/firebaseClass.js");
 
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://coderback-74f26.firebase.io",
+	credential: admin.credential.cert(serviceAccount)
 });
 
 const db = admin.firestore();
