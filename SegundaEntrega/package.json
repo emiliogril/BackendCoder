@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "express": "^4.18.1",
-    "firebase": "^9.9.4",
+    "firebase": "^9.10.0",
     "firebase-admin": "^11.0.1",
     "knex": "^2.3.0",
     "moment": "^2.29.4",
@@ -11,7 +11,7 @@
   },
   "name": "segundaentrega",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "clases/productoClass.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

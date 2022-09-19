@@ -4,8 +4,9 @@ const serviceAccount = require("../../db/backendcoder-902df-firebase-adminsdk-89
 const ContenedorFirebase = require("../../clases/firebaseClass.js");
 
 admin.initializeApp({
-	credential: admin.credential.cert(serviceAccount)
-});
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://coderback-74f26.firebase.io",
+}, 'productos');
 
 const db = admin.firestore();
 
@@ -83,7 +84,7 @@ class ProductosDaoFirebase extends ContenedorFirebase {
    * Metodo para actualizar un producto.
    * @param {String} doc recibo el nombre del documento que quiero eliminar.
    * @param {Object} producto recibo la nueva informacion del producto.
-   * @returns 
+   * @returns
    */
   async updateById(doc, producto) {
 
@@ -93,7 +94,7 @@ class ProductosDaoFirebase extends ContenedorFirebase {
       code: producto.code,
       thumbnail: producto.thumbnail
     };
-    
+
     // Add a new document in collection "Productos" with nombre de producto '
     const res = await db.collection(this.nombreCollection).doc(doc).set(data);
     return res.data;
