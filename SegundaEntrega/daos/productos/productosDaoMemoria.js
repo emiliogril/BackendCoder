@@ -1,10 +1,10 @@
+const fs = require("fs");
 // import moment from 'moment';
 const moment = require("moment"); // require
 
 // Check if the file exists
 let fileExists = fs.existsSync("productos.txt");
 console.log("productos.txt exists:", fileExists);
-
 // If the file does not exist
 // create it
 if (!fileExists) {
