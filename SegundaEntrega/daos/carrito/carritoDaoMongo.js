@@ -4,7 +4,7 @@ var ObjectId = require("mongodb").ObjectId;
 const { MongoClient } = require("mongodb");
 
 const mongo = new MongoClient(
-  "mongodb+srv://delvalj:Joaquin712@cluster0.vznga.mongodb.net/?retryWrites=true&w=majority"
+  "mongodb+srv://emilio:emilio1@cluster0.efltjcq.mongodb.net/test"
 );
 mongo.connect();
 
