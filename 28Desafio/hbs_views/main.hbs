@@ -1,0 +1,152 @@
+    <div class="container text-center mt-2 border shadow-lg p-3 mb-5 bg-body rounded">
+
+        <h1 class="my-3"> Bienvenido/a {{ this.user }}</h1> 
+        <a href="/logout" class="btn btn-warning my-1">Log Out</a>  
+      <h4 class="m-3">Ingrese Su Producto</h4>
+      <form action="/api" method="post">
+        <!-- title input -->
+        <div class="form-outline mb-4">
+          <input
+            type="text"
+            id="form5Example1"
+            class="form-control"
+            name="title"
+            placeholder="Titulo"
+          />
+        </div>
+        <!-- thumbnail input -->
+        <div class="form-outline mb-4">
+          <input
+            type="text"
+            id="form5Example2"
+            class="form-control"
+            name="thumbnail"
+            placeholder="Thumbnail"
+          />
+        </div>
+
+        <!-- codigo input -->
+        <div class="form-outline mb-4">
+          <input
+            type="number"
+            name="code"
+            placeholder="Code"
+            id="form5Example3"
+            class="form-control"
+          />
+        </div>
+
+        <!-- price input -->
+        <div class="form-outline mb-4">
+          <input
+            type="number"
+            name="price"
+            placeholder="Price"
+            id="form5Example3"
+            class="form-control"
+          />
+        </div>
+        <!-- Submit -->
+        <button
+          type="submit"
+          value="add product"
+          class="btn btn-dark btn-block mb-4"
+        >Subscribe</button>
+      </form>
+    </div>
+
+    {{!-- RANDOM GENERATED DATA WITH FAKERS --}}
+
+        <div class="container border p-4 shadow-lg p-3 mb-5 bg-body rounded">
+      <h2 class="text-center">PRODUCTOS</h2>
+      <table class="container table table table-hover">
+        <thead>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Colores</th>
+        </thead>
+        <tbody>
+          {{#each showProductos}}
+            <tr>
+              <td>{{nombres}}</td>
+              <td>{{apellidos}}</td>
+              <td>{{colores}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+  </body>
+</html>
+
+<!-- CHAT-->
+<html class="m-4">
+  <div
+    class="container text-center mt-2 border shadow-lg p-3 mb-5 bg-body rounded"
+  >
+    <h2 class="text-center mb-2">CHAT</h2>
+    <head>
+      <script src="../socket.io/socket.io.js"></script>
+      <script src="main.js"></script>
+    </head>
+    <body>
+      <div id="messages" class="p-2 m-2"></div>
+      <form onsubmit="return enviarMensaje()">
+        <input
+          class="m-2 p-1 form-control"
+          placeholder="author"
+          type="text"
+          id="author"
+        />
+        <input
+          class="m-2 p-1 form-control"
+          placeholder="id"
+          type="text"
+          id="id"
+        />
+        <input
+          class="m-2 p-1 form-control"
+          placeholder="nombre"
+          type="text"
+          id="nombre"
+        />
+        <input
+          class="m-2 p-1 form-control"
+          placeholder="apellido"
+          type="text"
+          id="apellido"
+        />
+        <input
+          class="m-2 p-1 form-control"
+          placeholder="edad"
+          type="text"
+          id="edad"
+        />
+        <input
+          class="m-2 p-1 form-control"
+          placeholder="alias"
+          type="text"
+          id="alias"
+        />
+        <input
+          class="m-2 p-1 form-control"
+          placeholder="avatar"
+          type="text"
+          id="avatar"
+        />
+        <input
+          class="m-2 p-1 form-control"
+          placeholder="text"
+          type="text"
+          id="text"
+        />
+        <button class="m-2 p-1 form-control btn btn-dark" type="submit">Enviar
+          mensaje</button>
+      </form>
+
+
+      
+    </body>
+  </div>
+</html>
