@@ -1,8 +1,14 @@
 const express = require("express");
 const app = express();
 const { engine } = require("express-handlebars");
-const PORT = process.env.PORT || 8080;
+
+const dotenv = require("dotenv");
+dotenv.config();
+
+const { PORT, MONGOURL, SECRET } = process.env;
+
 const { routerProducto } = require("./routers/routerProd");
+const { routerRandom } = require("./routers/routerRandom");
 
 const { Server: HttpServer } = require("http");
 const { Server: SocketServer } = require("socket.io");
@@ -13,7 +19,7 @@ const socketServer = new SocketServer(httpServer);
 const session = require("express-session");
 const cp = require("cookie-parser");
 const MongoStore = require("connect-mongo");
-const {faker} = require("@faker-js/faker");
+const { faker } = require("@faker-js/faker");
 
 const passport = require("./ej_passport.js");
 
@@ -38,24 +44,23 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.use(
-    session({
-      store: MongoStore.create({
-        mongoUrl:
-          "mongodb+srv://emilio:emilio1@cluster0.efltjcq.mongodb.net/?retryWrites=true&w=majority",
-        mongoOptions: {
-          useNewUrlParser: true,
-          useUnifiedTopology: true,
-        },
-      }),
-      secret: "emilio",
-      resave: false,
-      rolling: true,
-      cookie: {
-        maxAge: 90000,
+  session({
+    store: MongoStore.create({
+      mongoUrl: MONGOURL,
+      mongoOptions: {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
       },
-      saveUninitialized: false,
-    })
-  );
+    }),
+    secret:SECRET,
+    resave: false,
+    rolling: true,
+    cookie: {
+      maxAge: 90000,
+    },
+    saveUninitialized: false,
+  })
+);
 
 // Passport
 app.use(passport.session());
@@ -63,6 +68,7 @@ app.use(passport.initialize());
 
 // Router
 app.use("/api", routerProducto);
+app.use("/api", routerRandom);
 
 // Views Engine
 app.engine(
@@ -78,7 +84,7 @@ app.set("view engine", "hbs");
 
 // Router
 app.get("/login", (req, res) => {
-    if (req.session.name) {
+  if (req.session.name) {
     res.redirect("/");
   } else {
     res.render("login", {});
@@ -87,64 +93,100 @@ app.get("/login", (req, res) => {
 
 app.get("/register", (req, res) => {
   if (req.session.name) {
-  res.redirect("/");
-} else {
-  res.render("register", {});
-}
+    res.redirect("/");
+  } else {
+    res.render("register", {});
+  }
 });
 
 app.get("/errorRegister", (req, res) => {
   if (req.session.name) {
-  res.redirect("/");
-} else {
-  res.render("errorRegister", {});
-}
+    res.redirect("/");
+  } else {
+    res.render("errorRegister", {});
+  }
 });
 
 app.get("/errorLogin", (req, res) => {
   if (req.session.name) {
-  res.redirect("/");
-} else {
-  res.render("errorLogin", {});
-}
+    res.redirect("/");
+  } else {
+    res.render("errorLogin", {});
+  }
 });
 
-app.post('/register', passport.authenticate('registracion', {failureRedirect: '/errorRegister', failureMessage: true}), (req, res) => {
-  console.log("en post register")
-  const registerSuccess = 'Registrado exitosamente. Ir a Login para ingresar'
-  res.redirect('/', );
+app.get("/info", loginCheck, (req, res) => {
+  const info = {
+    path: process.cwd(),
+    processId: process.pid,
+    nodeVersion: process.version,
+    titulo: process.tittle,
+    sistema: process.platform,
+    memory: process.memoryUsage.rss(),
+    file: __dirname,
+  };
+  // info.keys = Object.keys(info);
+  console.log(
+    "Directorio actual de trabajo:" + process.cwd() + "\n",
+    "Id del Proceso:" + process.pid + "\n",
+    "Version de Node:" + process.version + "\n",
+    "Titulo del proceso:" + process.tittle + "\n",
+    "Sistema Operativo:" + process.platform + "\n",
+    "Uso de la Memoria:" + process.memoryUsage.rss() + "\n"
+  );
+  res.send(info);
 });
+
+app.post(
+  "/register",
+  passport.authenticate("registracion", {
+    failureRedirect: "/errorRegister",
+    failureMessage: true,
+  }),
+  (req, res) => {
+    console.log("en post register");
+    const registerSuccess = "Registrado exitosamente. Ir a Login para ingresar";
+    res.redirect("/");
+  }
+);
 
 const armarMock = () => {
   return {
-      nombres: faker.name.firstName(),
-      apellidos: faker.name.lastName(),
-      colores:  faker.color.human()
-  }
-}
+    nombres: faker.name.firstName(),
+    apellidos: faker.name.lastName(),
+    colores: faker.color.human(),
+  };
+};
 const mocks = [];
 
-app.post('/login', passport.authenticate('autenticacion', {failureRedirect: '/errorLogin', failureMessage: true}), (req, res) => {
-  req.session.name = req.body.username;
-  // res.render('main', { user: req.session.name , showProductos: mocks });
-  res.redirect('/');
-});
+app.post(
+  "/login",
+  passport.authenticate("autenticacion", {
+    failureRedirect: "/errorLogin",
+    failureMessage: true,
+  }),
+  (req, res) => {
+    req.session.name = req.body.username;
+    // res.render('main', { user: req.session.name , showProductos: mocks });
+    res.redirect("/");
+  }
+);
 
 app.get("/", loginCheck, async (req, res) => {
-  let {cant = 5} = req.query ;
-  for(let i = 0; i < cant; i++) {
-      mocks.push(armarMock());
+  let { cant = 5 } = req.query;
+  for (let i = 0; i < cant; i++) {
+    mocks.push(armarMock());
   }
-  res.render("main", { user: req.session.name , showProductos: mocks });
+  res.render("main", { user: req.session.name, showProductos: mocks });
 });
 
-app.get("/logout", loginCheck, ( req, res) => {
+app.get("/logout", loginCheck, (req, res) => {
   const user = req.session.name;
   req.session.destroy((err) => {
-      console.log(err);
-      res.render("logout" , {user: user})
+    console.log(err);
+    res.render("logout", { user: user });
   });
-})
+});
 
 // CH A T
 socketServer.on("connection", async (socket) => {

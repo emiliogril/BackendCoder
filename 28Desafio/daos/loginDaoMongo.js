@@ -1,8 +1,10 @@
 const contenedorLogin = require("../clases/contenedorLogin.js");
 const { MongoClient } = require("mongodb");
 
+const { MONGOURL} = process.env;
+
 const mongo = new MongoClient(
-  "mongodb+srv://emilio:emilio1@cluster0.efltjcq.mongodb.net/?retryWrites=true&w=majority"
+  MONGOURL
 );
 mongo.connect();
 

@@ -1,4 +1,6 @@
-# Desafio clase 26
-# INICIO DE SESION 
+# Desafio clase 28
+# Usando el objeto process 
 
-Incorporar un sencillo que permite loguear un cliente por su nombre mediante un formulario de ingreso.
+El proyecto del último desafío entregable, mover todas las claves y credenciales utilizadas a un archivo .env, y cargarlo mediante la librería dotenv.
+
+La configuración que no va a ser manejada con esta librería va a ser el puerto de escucha del servidor.
