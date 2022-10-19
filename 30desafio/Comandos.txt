@@ -1,0 +1,13 @@
+MODO FORK
+pm2 start server.js --name="server fork" --watch -- -p 8080
+endpoint: /test/randoms
+
+MODO CLUSTER
+
+pm2 start server.js --name="Server Cluster" -i max  --watch -- 8080
+
+pm2 start server.js --name="server cluster One" -i 1 --watch -- -p 8081
+pm2 start server.js --name="server cluster One" -i 1 --watch -- -p 8082
+pm2 start server.js --name="server cluster One" -i 1 --watch -- -p 8083
+pm2 start server.js --name="server cluster One" -i 1 --watch -- -p 8084
+
