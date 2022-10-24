@@ -10,7 +10,8 @@ pm2 start server.js --name="server cluster One" -i 1 --watch -- -p 8082
 pm2 start server.js --name="server cluster One" -i 1 --watch -- -p 8083
 pm2 start server.js --name="server cluster One" -i 1 --watch -- -p 8084
 
-EJERCICIO ENTREGABLE CLASE 32 
+EJERCICIO:
+ 
 // SET NODE_ENV=PROD SINO ENTRA EN MODO DESARROLLO
 // SET NODE_ENV=desarrollo SINO ENTRA EN MODO DESARROLLO
 

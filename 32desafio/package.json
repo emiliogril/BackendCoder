@@ -9,6 +9,7 @@
     "test0x": "node testCargaAutocannon.js",
     "start0x": "0x server.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
