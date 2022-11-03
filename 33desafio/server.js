@@ -6,6 +6,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const { MONGOURL, SECRET } = process.env;
+const PORT = process.env.PORT;
 
 // const PORT = process.env.PORT || Number(process.argv[2]) || 8080;
 // const MODO = proces.argv[2] || 'fork';
