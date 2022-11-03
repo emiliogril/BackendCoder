@@ -1,0 +1,48 @@
+MODO FORK 
+pm2 start server.js --name="server fork" --watch -- -p 8080 
+endpoint: /test/randoms
+
+MODO CLUSTER 
+pm2 start server.js --name="Server Cluster" -i max  --watch -- 8080
+
+pm2 start server.js --name="server cluster One" -i 1 --watch -- -p 8081
+pm2 start server.js --name="server cluster One" -i 1 --watch -- -p 8082
+pm2 start server.js --name="server cluster One" -i 1 --watch -- -p 8083
+pm2 start server.js --name="server cluster One" -i 1 --watch -- -p 8084
+
+EJERCICIO:
+ 
+// SET NODE_ENV=PROD SINO ENTRA EN MODO DESARROLLO
+// SET NODE_ENV=desarrollo SINO ENTRA EN MODO DESARROLLO
+
+// node server.js
+
+// Correr el proyecto con 
+// node --prof server.js 
+// Hacer una llamada a localhost:8080/info 
+// cambiar nombre archivo isolate a info.log
+// node --prof-process info.log > result_info.log
+
+// Correr el proyecto con 
+// node --prof server.js 
+// Hacer una llamda a localhost:8080/infoComprimida
+// cambiar nombre archivo isolate a infoComprimida.log
+// node --prof-process infoCompimida.log > result_infoCompimida.log
+
+Explicacion: El Info comprimido hace mas llamados al sistema ya que tiene un console log adentro.
+
+// Utilizando Artillery
+// abrir el projecto en una terminal CMD  => node server.js
+// en la segunda terminal => artillery quick --count 50 -n 20 "http://localhost:8080/info" > result_artillery_info.txt
+// en la segunda terminal => artillery quick --count 50 -n 20 "http://localhost:8080/infoComprimida" > result_artillery_infoComprimida.txt
+
+// Utilizando Autocannon
+// modificar Package.json 
+// Abrir una primera terminal con el proyecto => npm run start
+// Abrir una segunda terminal => npm run test
+
+// node --inspect server.js
+// Abrir en browser => chrome://inspect/#devices
+
+// En carpeta 9399.0x buscar el Flamegraph
+
