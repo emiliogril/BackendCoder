@@ -1,0 +1,4 @@
+GET http://localhost:8080/newUser?username=marian&password=querty123 HTTP/1.1
+
+####
+GET http://localhost:8080/newUser?username=dani&password=qwerty123 HTTP/1.1

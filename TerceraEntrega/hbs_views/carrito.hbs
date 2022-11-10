@@ -1,0 +1,47 @@
+<div class="container border p-4 shadow-lg p-3 mb-5 bg-body rounded">
+
+  <div class="text-center">
+    <h2 class="text-center">CART</h2>
+    <a href="/" class="btn btn-warning my-2">Return to Menu</a>
+  </div>
+  <h3 class="my-3"> Carrito de {{this.user}} </h3>
+
+  <table class="container table table table-hover">
+    <thead>
+      <th>id</th>
+      <th>titulo</th>
+      <th>thumbnail</th>
+      <th>code</th>
+      <th>price</th>
+      <th></th>
+    </thead>
+
+    <tbody>
+      {{#each showProductos}}
+        <tr>
+          <td>{{_id}}</td>
+          <td>{{titulo}}</td>
+          <td><a href="{{thumbnail}}">{{thumbnail}}</a></td>
+          <td>{{code}}</td>
+          <td>${{price}}</td>
+
+          <td>
+            <form action="/eliminarCarrito" method="POST">
+              <input type="hidden" name="id" value="{{_id}}" />
+              <button type="submit" class="btn btn-warning m-1">Eliminar de
+                Carrito</button>
+            </form>
+          </td>
+        </tr>
+      {{/each}}
+
+    </tbody>
+  </table>
+  <div class="text-center">
+            <form action="/comprar" method="POST">
+              <input type="hidden" name="username" value="{{username}}" />
+              <button type="submit" class="btn btn-warning m-1">Comprar</button>
+            </form>
+  </div>
+
+</div>
