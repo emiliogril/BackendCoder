@@ -6,10 +6,10 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const { MONGOURL, SECRET } = process.env;
-const PORT = process.env.PORT;
 
 // const PORT = process.env.PORT || Number(process.argv[2]) || 8080;
 // const MODO = proces.argv[2] || 'fork';
+const PORT = process.env.PORT || 8081;
 
 const { routerProducto } = require("./routers/routerProd");
 const { routerRandom } = require("./routers/routerRandom");
@@ -54,7 +54,8 @@ const { port, mode } = parsed;
 // Middlewares
 app.use(cp());
 
-// Middleware para parsear el Body.
+// Middleware para parsear el Body. Sin esto no obtenemos el Body. SIEMPRE QUE USAMOS POST HAY QUE USARLO.
+// El body llega como strings. Lo que hace el middleware es transformarlo en JSON y mandarlo a la funcion que debe controlarlo.
 app.use(express.json());
 
 // Hace lo mismo pero con dato de formularios. Un form en HTML viene en forma de URL encoded y esto lo trasnforma en formulario.
@@ -111,6 +112,9 @@ app.engine(
   })
 );
 
+const bcrypt = require("bcrypt");
+
+
 app.set("views", "./hbs_views");
 app.set("view engine", "hbs");
 
@@ -124,6 +128,20 @@ socketServer.on("connection", async (socket) => {
   });
 });
 
+// this is default in case of unmatched routes
+// app.use((req, res) => {
+//   logger.warn("Ruta Inexistente");
+// // Invalid request
+//       res.json({
+//         error: {
+//           'name':'Error',
+//           'status':404,
+//           'message':'Invalid Request',
+//           'statusCode':404,
+//         },
+//          message: 'Ruta Inexistente!!'
+//       });
+// });
 
 
 // CLUSTER
@@ -136,9 +154,9 @@ const args = process.argv.slice(2);
 
 if (mode === "fork") {
   app.use("/api", routerRandom);
-  httpServer.listen(port, () => {
+  httpServer.listen(PORT, () => {
     console.log(
-      `ESTOY FORK CORRIENDO EN EL PUERTO : http://localhost:${port} Y EN MODO ${process.env.NODE_ENV}`
+      `ESTOY FORK CORRIENDO EN EL PUERTO : http://localhost:${PORT} Y EN MODO ${process.env.NODE_ENV}`
     );
   });
 }
@@ -152,9 +170,9 @@ if (mode === "cluster") {
     });
   } else {
     app.use("/test", routerCluster);
-    httpServer.listen(port, () => {
+    httpServer.listen(PORT, () => {
       console.log(
-        `ESTOY CLUSTER CORRIENDO EN EL PUERTO : http://localhost:${port} Y EN MODO ${process.env.NODE_ENV}`
+        `ESTOY CLUSTER CORRIENDO EN EL PUERTO : http://localhost:${PORT} Y EN MODO ${process.env.NODE_ENV}`
       );
     });
   }
